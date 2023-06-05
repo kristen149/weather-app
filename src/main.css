@@ -251,6 +251,10 @@ main {
     main {
         padding: 40px 100px;
     }
+    .error__message {
+        width: 60%;
+        padding: 80px 20px;
+    }
     .section__weatherTemperature .location {
         padding: 60px 0 0;
     }

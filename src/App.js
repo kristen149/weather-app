@@ -5,7 +5,7 @@ import {AiFillCaretDown, AiFillCaretUp, AiOutlineSmile} from "react-icons/ai";
 import {WiHumidity} from "react-icons/wi";
 import { useEffect } from 'react';
 
-// GET API
+// GET API=============================
 const api = {
   key: "cb02f985df1b5c99319d83f4a25f2197",
   base: "https://api.openweathermap.org/data/2.5/",
@@ -72,6 +72,7 @@ export const App = () => {
     }
 
     fetchWeatherData()
+   
   }, [city, units])
 
 
@@ -114,7 +115,6 @@ export const App = () => {
                 <div className='status'>{weather.weather[0].main}</div>
               </div>
             </div>
-            {/* =================== */}
 
             <div className='section__weatherBox'>
               <div className='weather-box'>
@@ -152,11 +152,7 @@ export const App = () => {
           </div>
         )}
 
-
-
       </main>
-
-
     </div>
   );
 }
