@@ -1,4 +1,3 @@
-
 const DateTime = () => {
 
     let date = new Date();
@@ -11,14 +10,9 @@ const DateTime = () => {
     var fmt = new Intl.DateTimeFormat('en-US', options);
     let displayDate = fmt.format(date);
 
-    return (
-
-        <span>{displayDate}</span>
-    )
+   return  <span>{displayDate}</span>;
+   
             
-
-
-
 }
 
 

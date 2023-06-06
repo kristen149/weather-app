@@ -1,5 +1,7 @@
-import './main.css';
+import './main.scss'
+// eslint-disable-next-line
 import React, { useState } from 'react';
+
 import DateTime from './components/DateTime';
 import {AiFillCaretDown, AiFillCaretUp, AiOutlineSmile} from "react-icons/ai";
 import {WiHumidity} from "react-icons/wi";
@@ -10,8 +12,6 @@ const api = {
   key: "cb02f985df1b5c99319d83f4a25f2197",
   base: "https://api.openweathermap.org/data/2.5/",
 }
-
-
 
 export const App = () => {
 
@@ -66,7 +66,6 @@ export const App = () => {
       .then(res=>res.json())
       .then(result => {
         setWeather(result)
-        console.log(result)
   
       })
     }

@@ -1,3 +1,11 @@
+// VARIABLE
+
+$bg-color-error: rgba(255, 255, 255, 0.5);
+$bg-color-searchbar: rgba(255, 255, 255, 0.8);
+$bg-color-temp: rgba(255, 255, 255, 0.4);
+$bg-color-weather-item: rgba(255, 255, 255, 0.4);
+
+// SASS|SCSS
 * {
     margin: 0;
     padding: 0;
@@ -36,80 +44,87 @@ main {
     display: flex;
     width: 100%;
     margin: 0 0 30px;
+
+    button {
+        border: none;
+        border-radius: 50%;
+        color: #000;
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 20px;
+        width: 50px;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        display: block;
+        padding: 15px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+        background-color: $bg-color-searchbar;
+        transition: 0.5s ease-out;
+
+    }
+
+    .search-bar:focus {
+        background-color: rgba(255, 255, 255, 1);
+    }
 }
 
-.section__searchField button {
-    border: none;
-    border-radius: 50%;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 20px;
-    width:50px;
-    text-align: center;
-}
 
-.section__searchField .search-bar {
-    width: 100%;
-    display: block;
-    padding: 15px;
-    border: none;
-    outline: none;
-    border-radius: 30px;
-    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: 0.5s ease-out;
+.section__weatherTemperature {
 
-}
-
-.section__searchField .search-bar:focus {
-    background-color: rgba(255, 255, 255, 1);
-}
-
-.section__weatherTemperature .date {
-    color: #FFF;
-    font-size: 20px;
-    font-weight: bold;
+    .date {
+        color: #FFF;
+        font-size: 20px;
+        font-weight: bold;
 
 
-}
+    }
 
-.section__weatherTemperature .location {
-    color: #FFF;
-    font-size: 25px;
-    font-weight: 100;
-    text-align: center;
-    padding: 40px 0 0;
-}
+    .location {
+        color: #FFF;
+        font-size: 25px;
+        font-weight: 100;
+        text-align: center;
+        padding: 40px 0 0;
+    }
 
-.section__weatherTemperature .temp {
-    color: #FFF;
-    font-size: 80px;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    margin: 25px auto;
-    padding: 15px 20px;
-    border-radius: 15px;
-    box-shadow: 3px 5px rgba(0, 0, 0, 0.2);
-    display: inline-block;
+    .temp {
+        color: #FFF;
+        font-size: 80px;
+        font-weight: bold;
+        text-align: center;
+        background-color: $bg-color-temp;
+        margin: 25px auto;
+        padding: 15px 20px;
+        border-radius: 15px;
+        box-shadow: 3px 5px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+
+
+    }
+
+    .__temperature {
+        text-align: center;
+    }
+
+    .status {
+        color: #FFF;
+        text-align: center;
+        font-size: 22px;
+
+    }
 
 
 }
 
-.section__weatherTemperature .__temperature {
-    text-align: center;
-}
-
-.section__weatherTemperature .status {
-    color: #FFF;
-    text-align: center;
-    font-size: 22px;
-
-}
 
 .error__message {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: $bg-color-error;
     padding: 20px 25px;
     box-shadow: 3px 5px rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -117,59 +132,63 @@ main {
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
+    h1 {
+        text-align: center;
+        color: darkred;
+        font-size: 20px;
+    
+    }
+    
+     p {
+        color: #FFF;
+        font-size: 25px;
+        padding: 20px 0;
+        text-align: center;
+    
+    }
 }
 
-.error__message h1 {
-    text-align: center;
-    color: darkred;
-    font-size: 20px;
 
-}
-
-.error__message p {
-    color: #FFF;
-    font-size: 25px;
-    padding: 20px 0;
-    text-align: center;
-
-}
 
 
 /* SECTION WEATHER BOX */
 
+.section__weatherBox {
+    .weather-box {
 
-.section__weatherBox .weather-box {
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    text-align: center;
-
-
-
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        text-align: center;
+    
+    
+    
+    }
+    
+    .weather-item {
+        color: #FFF;
+        background-color: $bg-color-weather-item;
+        margin: 15px auto;
+        padding: 20px 20px;
+    
+        border-radius: 15px;
+    
+        width: 100%;
+    
+    }
+    
+    .weather-item span {
+        font-size: 16px;
+    
+    }
+    
+    .weather-item p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+     
 }
 
-.section__weatherBox .weather-item {
-    color: #FFF;
-    background-color: rgba(255, 255, 255, 0.4);
-    margin: 15px auto;
-    padding: 20px 20px;
-
-    border-radius: 15px;
-
-    width: 100%;
-
-}
-
-.section__weatherBox .weather-item span {
-    font-size: 16px;
-
-}
-
-.section__weatherBox .weather-item p {
-    font-size: 20px;
-    font-weight: bold;
-}
 
 
 
@@ -179,13 +198,14 @@ main {
     .section__searchField button {
         width: 55px;
     }
-    
+
 }
+
 @media screen and (max-width:769px) {
     .section__searchField button {
         width: 60px;
     }
-    
+
 }
 
 @media screen and (max-width:365px) {
@@ -202,6 +222,7 @@ main {
 
 
     }
+
     .section__searchField button {
         width: 70px;
     }
@@ -229,19 +250,22 @@ main {
 
 
     }
+
     .section__weatherTemperature .temp {
         font-size: 44px;
 
     }
+
     .section__weatherBox .weather-item span {
         font-size: 9px;
 
     }
+
     .section__weatherBox .weather-item p {
         font-size: 15px;
     }
-  
-    
+
+
 }
 
 
@@ -251,32 +275,37 @@ main {
     main {
         padding: 40px 100px;
     }
+
     .error__message {
         width: 60%;
         padding: 80px 20px;
     }
+
     .section__weatherTemperature .location {
         padding: 60px 0 0;
     }
+
     .section__weatherBox {
-        margin-top:40px;
+        margin-top: 40px;
     }
 
 
-    
+
 }
 
 @media screen and (min-width:1024px) {
     main {
         padding: 60px 200px;
     }
+
     .section__weatherTemperature .location {
         padding: 60px 0 0;
     }
+
     .section__weatherBox {
-        margin-top:40px;
+        margin-top: 40px;
     }
 
 
-    
+
 }
