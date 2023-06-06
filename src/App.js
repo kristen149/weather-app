@@ -7,15 +7,13 @@ import {AiFillCaretDown, AiFillCaretUp, AiOutlineSmile} from "react-icons/ai";
 import {WiHumidity} from "react-icons/wi";
 import { useEffect } from 'react';
 
-// GET API=============================
+// API URL=============================
 const api = {
   key: "cb02f985df1b5c99319d83f4a25f2197",
   base: "https://api.openweathermap.org/data/2.5/",
 }
 
-export const App = () => {
-
-
+const App = () => {
 
   const [city, setCity] = useState('')
   const [weather, setWeather] = useState({})
@@ -31,35 +29,7 @@ export const App = () => {
     
   }
 
-      // 1. USING FETCH=======================
-  // const search = event => {
-  //   if (event.key === "Enter" ) {
-  //     fetch(`${api.base}weather?q=${city}&appid=${api.key}&units=${units}`)
-  //       .then(res => res.json())
-  //       .then(result => {
-  //         setWeather(result)
-  //         setCity('')
-  //         console.log(result)
-
-  //       })
-  //   }
-
-  // }
-
-      //  2. USING AWAIT==========================
-
-  // const fetchWeatherData = async() => {
-  //   await fetch (`${api.base}weather?q=${city}&appid=${api.key}&units=${units}`)
-  //   .then(res=>res.json())
-  //   .then(result => {
-  //     setWeather(result)
-  //     setCity('')
-  //     console.log(result)
-
-  //   })
-  // }
-
-      //   3. USE EFFECT================================
+//  GET API ================================
   useEffect (() => {
     const fetchWeatherData = async() => {
       await fetch (`${api.base}weather?q=${city}&appid=${api.key}&units=${units}`)
@@ -71,7 +41,6 @@ export const App = () => {
     }
 
     fetchWeatherData()
-   
   }, [city, units])
 
 
@@ -138,8 +107,6 @@ export const App = () => {
                   <p>{Math.round(weather.main.humidity)}%</p>
                 </div>
               </div>
-
- 
             </div>
 
           </div>
@@ -150,7 +117,6 @@ export const App = () => {
             <p>Please enter a valid city</p>
           </div>
         )}
-
       </main>
     </div>
   );
