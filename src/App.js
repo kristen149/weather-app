@@ -31,15 +31,11 @@ const App = () => {
 
 //  GET API ================================
   useEffect (() => {
-    const fetchWeatherData = async() => {
-      await fetch (`${api.base}weather?q=${city}&appid=${api.key}&units=${units}`)
-      .then(res=>res.json())
-      .then(result => {
-        setWeather(result)
-  
-      })
+    const fetchWeatherData = async() => {  //using async require less code
+      let response = await fetch (`${api.base}weather?q=${city}&appid=${api.key}&units=${units}`)
+      let result = await response.json()
+      setWeather(result) 
     }
-
     fetchWeatherData()
   }, [city, units])
 
